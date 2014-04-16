@@ -10,9 +10,9 @@
 makeCacheMatrix <- function(x = matrix()) {
 		vSolve <- NULL
 		set <- function(y) {
-							x <<- y
-							vSolve <<- NULL
-						}
+			x <<- y
+			vSolve <<- NULL
+		}
 		get <- function() x
 		setSolve <- function(mInverse) vSolve <<- mInverse
 		getSolve <- function() vSolve
@@ -63,3 +63,4 @@ cacheSolve(lstMatrix) ## will return the following output
 # [1,]   -2  1.5
 # [2,]    1 -0.5
 
+vMatrix %*% cacheSolve(lstMatrix) ## will pull the cached matrix and a 2x2 Identity matrix
